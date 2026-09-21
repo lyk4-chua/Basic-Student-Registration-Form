@@ -1,35 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Registration</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chua | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>Student Registration</h1>
-    <form id="form">
-        <input type="text" id="name" placeholder="Name">
-        <input type="text" id="course" placeholder="Course">
-        <input type="text" id="year" placeholder="Year">
-        <input type="text" id="section" placeholder="Section">
-        <input type="email" id="email" placeholder="Email">
-        <div class="buttons">
-            <button type="submit">Submit</button>
-            <button type="button" class="clear">Clear</button>
-        </div>
-    </form>
+    <header>
+        <h1>LYKA <span class="accent">CHUA</span></h1>
+    </header>
 
-    <table>
-        <thead>
-            <tr><th>Name</th><th>Course</th><th>Year</th><th>Section</th><th>Email</th></tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-    </table>
-</div>
+    <nav class="dashboard-controls">
+        <button class="dash-btn" onclick="showSection('home')">HOME</button>
+        <button class="dash-btn" onclick="showSection('about')">ABOUT</button>
+        <button class="dash-btn" onclick="showSection('contact')">CONTACT</button>
+        <button class="dash-btn" onclick="showSection('exercises')"> WEEKLY EXERCISES</button>
+    </nav>
 
-<script src="script.js"></script>
+    <main id="displayArea">
+        <section id="home" class="module-card">
+            <div class="module-label">Welcome</div>
+            <div class="terminal-view">
+                <h2>System Active</h2>
+                <p>Welcome to my portfolio.</p>
+            </div>
+        </section>
+
+        <section id="about" class="module-card hidden">
+            <div class="module-label">Profile</div>
+            <div class="terminal-view">
+                <h2>About Me</h2>
+                <p>I am a third year student studying Bachelor of Science in Computer Science at Northwwest Samar State University.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="module-card hidden">
+            <div class="module-label">Contact</div>
+            <div class="terminal-view">
+                <p>Email: lykachua79@gmail.com</p>
+                <p>Location: Region VIII, Philippines</p>
+            </div>
+        </section>
+
+
+        <section id="exercises" class="module-card hidden">
+            <div class="module-label">Laboratory Modules</div>
+            <div class="activity-bar">
+                <button class="action-btn exercise-box" onclick="toggleEx('ex2')"><span class = "btn-label">2</span></button>
+                <button class="action-btn exercise-box" onclick="toggleEx('ex3')"><span class ="btn-label">3</span></button>
+                <button class="action-btn exercise-box" onclick="toggleEx('ex4')"><span class ="btn-label">4</span></button>
+            </div>
+
+            <div id="ex2-container" class="hidden">
+                <div class="exercise-header">
+                    <h2 class="ex-title">EXERCISE 2</h2>
+                </div>
+                <div class="activity-bar tiny">
+                    <button onclick="ex2_act1()">1</button><button onclick="ex2_act2()">2</button>
+                    <button onclick="ex2_act3()">3</button><button onclick="ex2_act4()">4</button>
+                    <button onclick="ex2_act5()">5</button><button onclick="ex2_act6()">6</button>
+                    <button onclick="ex2_act7()">7</button>
+                </div>
+                <div id="content1" class="terminal-view"></div>
+            </div>
+
+            <div id="ex3-container" class="hidden">
+                <div class="exercise-header">
+                    <h2 class="ex-title">EXERCISE 3</h2>
+                </div>
+                <div class="activity-bar tiny">
+                    <button onclick="ex3_act1()">1</button><button onclick="ex3_act2()">2</button>
+                    <button onclick="ex3_act3()">3</button><button onclick="ex3_act4()">4</button>
+                    <button onclick="ex3_act5()">5</button><button onclick="ex3_act6()">6</button>
+                    <button onclick="ex3_act7()">7</button><button onclick="ex3_act8()">8</button>
+                </div>
+                <div id="content2" class="terminal-view"></div>
+            </div>
+
+             <div id="ex4-container" class="hidden">
+                <div class="exercise-header">
+                    <h2 class="ex-title">EXERCISE 4</h2>
+                </div>
+                <div class="activity-bar tiny">
+                    <button onclick="ex4_act1()">1</button>  
+                </div>
+                <div id="content3" class="terminal-view"></div>
+            </div>
+            
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
